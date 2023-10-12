@@ -1,0 +1,224 @@
+// =====================================================================================================================
+.header {
+  width: 100%;
+  padding: 10px 0;
+  background-color: $blackColor;
+
+  .header__container {
+    .header__nav-logo {
+      a {
+        img {
+          width: 50px;
+
+          @media only screen and (max-width: 992px) {
+            width: 55px;
+          }
+        }
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      height: 4.25rem;
+    }
+  }
+
+  &.sticky {
+    @media only screen and (max-width: 992px) {
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      background-color: $blackColor;
+    }
+  }
+  
+
+  // .header__container
+  &__container {
+    height: rem($headerHeight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header__menu {
+      align-items: center;
+      text-transform: uppercase;
+        .menu__list {
+          margin: 0 58px 0;
+          padding: 0;
+          align-items: center;
+
+          li {
+            margin-right: 16px;
+            
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .menu__social {
+          align-items: center;
+          padding: 0;
+
+          li {
+            margin-right: 16px;
+
+            a {
+              svg {
+                height: 20px;
+                width: 20px;
+
+                &:hover {
+                  path {
+                    color: white;
+                  }
+                }
+              }
+
+              svg path {
+                color: $orangeColor;
+              }
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+      .header__menu {
+        display: none;
+      }
+
+      .header__logo {
+        display: none;
+      }
+
+      .mobile-nav-button {
+        width:35px;
+        position:absolute;
+        margin:2rem;
+        right:0;
+        top:0;
+        z-index:9999;
+        cursor:pointer;
+        width:35px;
+        height:30px;
+        .mobile-nav-button__line {
+            width:100%;
+            height:4px;
+            background: white;
+            position:relative;
+            transition:1s ease;
+            &:nth-of-type(2) {
+                margin:0.5rem 0;
+            }
+    
+        }
+        .mobile-nav-button__line--1 {
+            transform: rotate(45deg);
+            top: 13px;
+            position: absolute;
+        }
+        .mobile-nav-button__line--2 {
+            display: none;
+        }
+        .mobile-nav-button__line--3 {
+            transform: rotate(135deg);
+            top: 13px;
+            position: absolute;        
+        }
+    }
+    
+    //Mobile Menu
+    
+    .mobile-menu {
+        max-width:500px;
+        width:100%;
+        right:-100%;
+        min-height: 100vh;
+        height: 100%;
+        background: $orangeColor;
+        position:absolute;
+        z-index:9998;
+        transition: 0.6s ease;
+        top:0;
+        opacity:0;
+
+        ul {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            padding:0;
+            li {
+                list-style: none;
+                cursor: pointer;
+                a {
+                    width:100%;
+                    max-width:1200px;
+                    margin:0 auto;
+                    display:block;
+                    text-align: center;
+                    text-decoration:none;
+                    color: black;
+                    font-size: 34px;
+                    font-weight: bold;
+                    overflow:hidden;
+                    position:relative;
+                    padding: 14px 0;
+                    letter-spacing: 3px;
+                    font-weight: 500;
+                    
+                    &:after {
+                        content:'';
+                        background: black;
+                        width:100%;
+                        height:100%;
+                        position:absolute;
+                        right:-100%;
+                        top:0;
+                        z-index:-1;
+                        transition:0.4s ease;
+                    }
+                    &:hover {
+                       &:after {
+                        right:0;
+                       }
+                       color: white;
+                    }
+                }
+            }
+        }
+        img {
+            position: absolute;
+            width: 150px;
+            display: block;
+            left: 50%;
+            top: 3rem;
+            transform: translatex(-50%);
+            padding: 0;
+            text-align: center;
+        }
+    }
+      .mobile-menu--open {
+          right:0;
+          height: 100%;
+          opacity:1;
+          position: fixed;
+
+          @media only screen and (max-width: 392px) {
+              max-width: 100%;
+              width: 100%;
+          }
+        }
+    }
+  }
+}
+
+.mobile-menu {
+  display: none;
+    @media only screen and (max-width: 992px) {
+      display: block;
+    }
+}

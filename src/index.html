@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', {
+    'title': 'Detailing on Wheels'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="page">
+        <div data-observ></div>
+        <section class="start-block">
+          @@include('html/homePage/mainBlock.html', {})
+        </section>
+        <section class="about-block" id="about-us">
+          @@include('html/homePage/aboutBlock.html', {})
+        </section>
+        <section class="packages-block" id="packages">
+          @@include('html/homePage/packages.html', {})
+        </section>
+        <section class="vehicle-size-block" id="vehicle-size">
+          @@include('html/homePage/vehicleSize.html', {})
+        </section>
+        <section class="how-it-works-block" id="how-it-works">
+          @@include('html/homePage/howItWorks.html', {})
+        </section>
+        <section class="why-choose-block">
+          @@include('html/homePage/whyChooseUs.html', {})
+        </section>
+        <section class="services-block">
+          @@include('html/homePage/services.html', {})
+        </section>
+        <section class="faq-block" id="faq">
+          @@include('html/homePage/faq.html', {})
+        </section>
+      </main>
+      @@include('html/footer.html', {})
+    </div>
+    @@include('html/script.html', {})
+    <a href="https://calendly.com/detailingonwheels-ca/booking" target="_blank" class="sticky-link">
+      <span>Book an appoinment</span>
+    </a>
+  </body>
+</html> 

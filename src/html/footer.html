@@ -1,0 +1,59 @@
+<footer class="footer">
+    <div class="footer__container flex space-between">
+      <div class="footer__nav-info">
+        <div class="footer__nav-name">
+          <a href="index.html"><img src="../images/Logo-D.png" alt="logo image"></a>
+        </div>
+        <div class="footer__nav-location margin-24-bot">
+          <h3 class="margin-16-bot menu__item text-orange">Ottawa, ON</h3>
+        </div>
+        <div class="footer__nav-contact">
+          <div class="footer__nav-contact margin-16-bot menu__item">
+            <a href="mailto:detailingonwheels.ca@gmail.com" class="contact-link link"><i class="far fa-envelope"></i>detailingonwheels.ca@gmail.com</a>
+          </div>
+          <div class="footer__nav-contact menu__item">
+            <a href="tel:+12265524762" class="contact-link link"><i class="fas fa-phone"></i> +1 (226) 552-4762</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__nav-social flex">
+        <div class="footer__nav-hours margin-32-right">
+          <h2 class="footer__nav-title menu__item margin-32-bot text-orange">Hours</h2>
+          <div class="footer__nav-schedule">
+            <div class="margin-16-bot menu__item">Monday – Saturday</div>
+            <div class="menu__item">8am – 6pm</div>
+          </div>
+        </div>
+        <div class="footer__nav-follow">
+          <h2 class="footer__nav-title margin-32-bot menu__item text-orange">Follow</h2>
+          <ul class="menu__list">
+            <li class="menu__item margin-16-bot"><a href="https://www.facebook.com/profile.php?id=100093617481543" target="_blank" class="menu__link link"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li class="menu__item"><a href="https://www.instagram.com/detailingonwheels.ca" target="_blank" class="menu__link link"><i class="fab fa-instagram"></i> Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-overlay" id="popup">
+        <div class="popup-wrapper">
+            <div class="popup-content">
+                <h2>Get 25% off at any servise</h2>
+                <p>Enter your email to receive promo code</p>
+                <form class="promo-popup text" method="POST" action="promo.php">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button class="btn" type="submit">Submit</button>
+                  </form>
+                <a href="#" class="close-popup">Close</a>
+            </div>
+            <div class="spinner-wrapper" id="spinner">
+              <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup-confirm popup-overlay" id="thank-you-popup" style="display: none;">
+      <div class="popup-content">
+          <h2>Thank You!</h2>
+          <p>Thank you for signing up. Check your email for the promo code.</p>
+          <a href="#" class="close-popup">Close</a>
+      </div>
+  </div>
+</footer>

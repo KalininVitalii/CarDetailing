@@ -1,0 +1,192 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Asap', sans-serif;
+  position: relative;
+  &.lock {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+.sticky-link {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(180deg);
+  transform-origin: center;
+  writing-mode: vertical-rl;
+  background-color: #000;
+  font-family: $fontFamily;
+  letter-spacing: 6px;
+  border: 1px solid #fff;
+  border-left: none;
+  padding: 16px 16px 16px 4px;
+  border-radius: 0 8px 8px 0;
+  transition: letter-spacing 0.3s;
+
+  @media only screen and (max-width: 945px) {
+    display: none;
+  }
+}
+
+.sticky-link:hover {
+  letter-spacing: 3px;
+}
+
+// Базовые анимации:
+// @import "keyframes";
+
+// Стили для полноэкранного блока:
+// @import "fullscreen";
+
+// Стили основного ограничивающего контейнера =================================
+/*
+* (i) Стили будут применяться ко 
+* всем классам содержащим *__container
+* Например header__container, main__container и т.д.
+*/
+.full-container {
+  margin: 0 76px;
+}
+
+[class*='__container'] {
+  max-width: rem($containerWidth + $mainOffset * 2);
+  margin: 0 auto;
+  padding: 0 rem($mainOffset);
+}
+// Стили отзывчивых картинок (IBG) ============================================
+[class*='-ibg'] {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+ul {
+  margin: 0;
+}
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+h1 {
+  line-height: 180%;
+}
+
+li {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+[class*='-ibg_contain'] {
+  img {
+    object-fit: contain;
+  }
+}
+// Стили для обертки модальных окон ===========================================
+[class*='_overlay-bg'] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: $standartTrans; // Можно задать свою анимацию
+  z-index: 2000; // Увеличить если нужно
+  padding: rem(60) rem(15); // Изменить по макету
+  overflow-y: auto;
+
+  @include media(768) {
+    &::-webkit-scrollbar {
+      // Удалить из за ненадобности
+      display: none;
+    }
+  }
+
+  &._is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+// Оболочка ===================================================================
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden; // clip - если используется в проекте position: sticky
+}
+
+.page {
+  position: relative;
+  flex: 1 1 auto;
+
+  [data-observ] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: rem(2);
+    background: transparent;
+    pointer-events: none;
+  }
+
+  &_start {
+    padding-top: rem($headerHeight);
+  }
+}
+
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
+}
+
+//slick slider
+
+.carousel {
+  .slick-dots {
+    bottom: -75px;
+
+    li {
+      margin: 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+      bottom: -40px;
+    }
+    .slick-active {
+      button {
+        &:before {
+          color: $orangeColor;
+          opacity: unset;
+        }
+      }
+    }
+
+    button {
+      &:before {
+        color: #858585;
+        opacity: unset;
+        font-size: 10px;
+
+        @media only screen and (max-width: 600px) {
+          font-size: 8px;
+        }
+      }
+    }
+  }
+}
